@@ -37,24 +37,43 @@ public class Hero {
 	}
 
 	public void setHp(int inputhp) {
-		this.hp = inputhp;
+		if (inputhp < 0) {
+			System.out.println("정상적인 값을 입력하세요");
+		} else {
+			this.hp = inputhp;
+		}
 	}
 
 	public void setPower(int inputpower) {
-		this.power = inputpower;
+		if (inputpower < 0) {
+			System.out.println("정상적인 값을 입력하세요");
+		} else {
+
+			this.power = inputpower;
+		}
 	}
 
 	public void setDefense(double inputdefense) {
-		this.defense = inputdefense;
+		if (inputdefense < 0) {
+			System.out.println("정상적인 값을 입력하세요");
+		} else {
+
+			this.defense = inputdefense;
+		}
 	}
 
 	public void setIsDie(boolean inputdie) {
-		this.isDie = inputdie;
+		if (inputdie != true || false) {
+			System.out.println("정상적인 값을 입력하세요");
+		} else {
+
+			this.isDie = inputdie;
+		}
 	}
 
 	public void showinfo() {
-		System.out.println("귀하의 정보:" + "이름:" + name+", 체력:" +  + hp+", 공격력:" +
-	power+", 방어력:" + defense+", 생존:" + isDie);
+		System.out.println(
+				"귀하의 정보:" + "이름:" + name + ", 체력:" + +hp + ", 공격력:" + power + ", 방어력:" + defense + ", 생존:" + isDie);
 	}
 
 }

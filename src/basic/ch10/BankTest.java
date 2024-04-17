@@ -29,12 +29,10 @@ public class BankTest {
 
 		bank1.setName("그린은행");
 		System.out.println(bank1.getName());
-		
+
 		bank1.setBalance(-100000);
 		System.out.println(bank1.getBalance());
-		
-		
-		
+
 	}// end of main
 
 }// end of class

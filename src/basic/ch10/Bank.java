@@ -32,29 +32,28 @@ public class Bank {
 	public void showinfo() {
 		System.out.println("현재 잔액은" + this.balance + "입니다");
 	}
-	
-	//정보 은닉 후에(private) getter, setter 메서드를 설계해  둘 수 있다.
+
+	// 정보 은닉 후에(private) getter, setter 메서드를 설계해 둘 수 있다.
 	// get 메서드란 단순히 객체의 상태 변수를 리턴하는 메서드 이다.
 	public int getBalance() {
 		return this.balance;
 	}
+
 	public String getName() {
 		return this.name;
 	}
-	
+
 	// 멤버 변수에 접근해서 객체의 상태 값을 변경하게 하는 메서드(리턴타입 X)}
 	public void setName(String inpuName) {
 		this.name = inpuName;
 	}
+
 	public void setBalance(int money) {
-		//방어적 코드 작성하기
-		if(money <0){
+		// 방어적 코드 작성하기
+		if (money < 0) {
 			System.out.println("잘못된 입력입니다");
 		}
-		this.balance=money;
+		this.balance = money;
 	}
-	
 
-	
-	
 }
