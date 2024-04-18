@@ -1,0 +1,23 @@
+ 1. 저장소 생성하기 --> git init
+
+2. 감시하고 있는 파일 상태 -->git status
+
+3. 사용자 정보 설정
+ git config --global user.email "ning00060@gmail.com"
+  git config --global user.name "ning00060"
+
+4.파일에 상태 변경
+추적을 선택(git add 파일명.확장자)
+그 시점에 현상태를 스냅샷 찍어서 보관
+git commit -m ' 240416 mg'
+
+
+5. 기록된 고르 확인하기
+git log
+git log --oneline
+
+6. git hub 저장소 생성후 연결 방법
+6_1. 저장소 부터 만들고 셋팅한다.
+6_2. 기존 코드에 저장소를 연결 한다.
+
+7. gitignore.txt-->파일명 변경-->.gitignore
