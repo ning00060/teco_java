@@ -127,9 +127,6 @@ public class MyBookStore {
 				// 해당 제목에 책은 존재하지 않습니다.
 				// if(isFind ==false){
 //				 System.out.println("해당책은 존재 하지안스빈다.");}
-			} else {
-				System.out.println("해당책이없습니다");
-				return;
 			}
 
 			// 만약 사용자가 입력한 책 제목과 배열 요소안에 title 값이
@@ -138,6 +135,10 @@ public class MyBookStore {
 
 			// 심화 --반복문을 전부 돌리면안됩니다
 
+		}
+		if (isFind == false) {
+			System.out.println("해당책이없습니다");
+			return;
 		}
 	}
 
