@@ -9,5 +9,6 @@ public class HeroTest {
 		Wizard wizard1 = new Wizard("라이즈", 100);
 
 		warrior1.attack(archor1);
+		
 	}
 }

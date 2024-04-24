@@ -21,3 +21,13 @@ git log --oneline
 6_2. 기존 코드에 저장소를 연결 한다.
 
 7. gitignore.txt-->파일명 변경-->.gitignore
+
+8. Git 특정 시점으로 되돌리기
+
+git log --oneline 확인
+git check HEAD^ -1칸 뒤로
+git check HEAD^^ -2칸 뒤로
+git check HEAD^^^ -3칸 뒤로
+
+다시 최신으로 돌아가려면 
+git checkout main
