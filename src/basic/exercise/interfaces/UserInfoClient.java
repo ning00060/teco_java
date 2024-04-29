@@ -12,7 +12,7 @@ public class UserInfoClient {
 		UserInfo userinfo = new UserInfo(inputUserName, inpuUserPw);
 		// 데이터를 받아서 IUserInfoDao를 구현한 구현 클래스에게 전달하고자 한다
 //		IUserInfoDao iUserInfoDao1 = new UserInfoMySqlDaoImpl();
-		IUserInfoDao iUserInfoDao1 =new UserInfoOracleDaoImpl();
+		IUserInfoDao iUserInfoDao1 = new UserInfoOracleDaoImpl();
 
 		iUserInfoDao1.insertUserInfo(userinfo);
 		iUserInfoDao1.updateUserInfo(userinfo);
