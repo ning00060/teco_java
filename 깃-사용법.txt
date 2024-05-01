@@ -11,7 +11,6 @@
 그 시점에 현상태를 스냅샷 찍어서 보관
 git commit -m ' 240416 mg'
 
-
 5. 기록된 고르 확인하기
 git log
 git log --oneline
@@ -21,8 +20,14 @@ git log --oneline
 6_2. 기존 코드에 저장소를 연결 한다.
 
 7. gitignore.txt-->파일명 변경-->.gitignore
+-> gitignore.io 홈페이지 옵션선택
 
-8. Git 특정 시점으로 되돌리기
+
+8. 원격지 저장소에서 코드 다운로드 받기
+git clone https://github.com/ning00060/teco_java.git (레퍼지토리)
+cd teco_java 폴더이동
+
+9. Git 특정 시점으로 되돌리기
 
 git log --oneline 확인
 git check HEAD^ -1칸 뒤로
@@ -31,3 +36,26 @@ git check HEAD^^^ -3칸 뒤로
 
 다시 최신으로 돌아가려면 
 git checkout main
+
+-> git pull
+
+
+프로젝트 깃
+1.브랜치 생성 방ㅂ법
+ 	:현재 브랜치가 어떤것이 있는가? 확인
+git branch
+
+2.깃 브랜치 이동방법
+git checkout featrue-string
+   : 반드시 작업대를 깔끔하게 정리하고 이동한다.
+
+3. git merge 하는 방법
+   : 작업트리가 깔끔해야한다.
+   : 먼저 합치고자 하는 브랜치로 이동해서 실행을 한다.
+   : git merge [브랜치명-합치고 싶은 가지 이름]
+
+
+4. git branch 삭제하는 방법
+삭제는 정확하게 merge 후에 처리하자
+--참고 :
+먼저 브랜치를 생성하고 merge 하는 습관으로 개발을 진행하는 것이 좋다.
