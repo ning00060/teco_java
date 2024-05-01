@@ -29,7 +29,7 @@ public class BankAccount {
 	}
 
 	// 출금
-	public  int withDraw(int money) {
+	public int withDraw(int money) {
 
 		synchronized (this) {
 			int currentMoney = getMoney();
