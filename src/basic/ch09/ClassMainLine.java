@@ -3,7 +3,7 @@ package basic.ch09;
 import java.util.Scanner;
 
 public class ClassMainLine {
-
+	
 	public static void main(String[] args) {
 //		final int W_POWER = 10;
 //		final int A_POWER = 20;

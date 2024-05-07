@@ -9,7 +9,7 @@ public class Warrior {
 	int defence;
 	int speed;
 	int count;
-
+	
 	public Warrior(String Wname, int Whp, int Wmp, int Wat, int Wde, int Wsp) {
 		name = Wname;
 		HP = Whp;
@@ -18,7 +18,7 @@ public class Warrior {
 		defence = Wde;
 		speed = Wsp;
 	}
-
+	
 	public void TakeM(int at, int deal, Magician magician) {
 		at += attck;
 		magician.Injuried(attck);
@@ -52,3 +52,4 @@ public class Warrior {
 
 	}
 }
+
