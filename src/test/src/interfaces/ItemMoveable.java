@@ -1,7 +1,7 @@
-//package interfaces;
-//
-//public interface ItemMoveable {
-//
-//	void left();
-//
-//}
+package test.src.interfaces;
+
+public interface ItemMoveable {
+
+	void left();
+
+}

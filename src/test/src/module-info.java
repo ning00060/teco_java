@@ -1,9 +1,3 @@
-///**
-// * 
-// */
-///**
-// * 
-// */
-//module miniProject {
+//module teco_java{
 //	requires java.desktop;
 //}

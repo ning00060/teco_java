@@ -7,37 +7,46 @@ import test.src.interfaces.ItemMoveable;
 import test.src.state.BombWay;
 import test.src.test.MiniGameFrame;
 
-public class Item extends JLabel implements ItemMoveable {
+public class Object extends JLabel implements ItemMoveable {
 
 	MiniGameFrame mContext;
 
-	private int state = 0;
-	private int score = 0;
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
 
 	private int x;
 	private int y;
-	private ImageIcon item;
+
+	private int state = 0;
+
+	private ImageIcon object;
 	private final int SPEED = 3;
 
 	private boolean left;
 	private BombWay bombWay;
 
-	public Item(MiniGameFrame mContext2) {
-		this.mContext = mContext2;
+	public Object(MiniGameFrame mContext) {
+		this.mContext = mContext;
 		initData();
 		setInitLayout();
 		left();
 	}
 
 	public void initData() {
-		item = new ImageIcon("img/dotori.png");
+		object = new ImageIcon("img/장애물.png");
+
 		x = 1000;
 		y = 310;
 
 	}
 
 	public void setInitLayout() {
-		setIcon(item);
+		setIcon(object);
 		setSize(50, 50);
 		setLocation(x, y);
 	}
@@ -58,13 +67,6 @@ public class Item extends JLabel implements ItemMoveable {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					int absX = Math.abs(x - mContext.getPlayer().getX() - 55);
-					int absY = Math.abs(y - mContext.getPlayer().getY());
-					if (absX < 25 && absY < 50) {
-						if (state == 0) {
-							crash();
-						}
-					}	
 				}
 
 			}
@@ -73,18 +75,10 @@ public class Item extends JLabel implements ItemMoveable {
 	}
 
 	public void crash() {
-		mContext.getItem().setState(1);
+//		mContext.getObject().setState(1);
 		setIcon(null);
-		mContext.remove(mContext.getItem());
+//		mContext.remove(mContext.getObject());
 		mContext.repaint();
-	}
-
-	public int getState() {
-		return state;
-	}
-
-	public void setState(int state) {
-		this.state = state;
 	}
 
 	public int getX() {
@@ -103,12 +97,12 @@ public class Item extends JLabel implements ItemMoveable {
 		this.y = y;
 	}
 
-	public ImageIcon getItem() {
-		return item;
+	public ImageIcon getObject() {
+		return object;
 	}
 
-	public void setItem(ImageIcon item) {
-		this.item = item;
+	public void setObject(ImageIcon object) {
+		this.object = object;
 	}
 
 	public boolean isLeft() {

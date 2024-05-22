@@ -7,38 +7,43 @@ import test.src.interfaces.ItemMoveable;
 import test.src.state.BombWay;
 import test.src.test.MiniGameFrame;
 
-public class Item extends JLabel implements ItemMoveable {
+public class Shield extends JLabel implements ItemMoveable {
 
 	MiniGameFrame mContext;
 
 	private int state = 0;
-	private int score = 0;
-
 	private int x;
 	private int y;
-	private ImageIcon item;
+	private ImageIcon shield;
+	private Player player;
+	private ImageIcon shieldMotion;
+	private ImageIcon shieldMotion2;
 	private final int SPEED = 3;
-
 	private boolean left;
 	private BombWay bombWay;
 
-	public Item(MiniGameFrame mContext2) {
+	Bomb bomb;
+
+	public Shield(MiniGameFrame mContext2) {
 		this.mContext = mContext2;
+		this.player = mContext2.getPlayer();
+		this.bomb = mContext2.getBomb();
 		initData();
 		setInitLayout();
 		left();
 	}
 
 	public void initData() {
-		item = new ImageIcon("img/dotori.png");
+		shield = new ImageIcon("img/shield.png");
+		shieldMotion = new ImageIcon("img/shieldMotion.png");
+		shieldMotion2 = new ImageIcon("img/Player.png");
 		x = 1000;
 		y = 310;
-
 	}
 
 	public void setInitLayout() {
-		setIcon(item);
-		setSize(50, 50);
+		setIcon(shield);
+		setSize(100, 50);
 		setLocation(x, y);
 	}
 
@@ -47,7 +52,6 @@ public class Item extends JLabel implements ItemMoveable {
 		bombWay = BombWay.LEFT;
 		left = true;
 		new Thread(new Runnable() {
-
 			@Override
 			public void run() {
 				while (left) {
@@ -64,19 +68,37 @@ public class Item extends JLabel implements ItemMoveable {
 						if (state == 0) {
 							crash();
 						}
-					}	
+					}
 				}
-
 			}
 		}).start();
-
 	}
 
 	public void crash() {
-		mContext.getItem().setState(1);
+		state = 1;
 		setIcon(null);
-		mContext.remove(mContext.getItem());
+		mContext.remove(this);
 		mContext.repaint();
+
+		if (state == 1) {
+			player.setIcon(player.getShieldMotion());
+			player.setShielded(true);
+			System.out.println("쉴드 모션");
+
+			for (int i = 0; 1 < 30; i++) {
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				if (mContext.getPlayer().isShielded() == false) {
+					break;
+				}
+			}
+			System.out.println("쉴드 모션 해제");
+			player.setIcon(player.getPlayer());
+			player.setShielded(false);
+		}
 	}
 
 	public int getState() {
@@ -103,12 +125,12 @@ public class Item extends JLabel implements ItemMoveable {
 		this.y = y;
 	}
 
-	public ImageIcon getItem() {
-		return item;
+	public ImageIcon getShield() {
+		return shield;
 	}
 
-	public void setItem(ImageIcon item) {
-		this.item = item;
+	public void setShield(ImageIcon shield) {
+		this.shield = shield;
 	}
 
 	public boolean isLeft() {
@@ -130,5 +152,4 @@ public class Item extends JLabel implements ItemMoveable {
 	public int getSPEED() {
 		return SPEED;
 	}
-
 }

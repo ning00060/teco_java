@@ -1,5 +1,5 @@
-//package state;
-//
-//public enum BombWay {
-//	LEFT;
-//}
+package test.src.state;
+
+public enum BombWay {
+	LEFT;
+}
